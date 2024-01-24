@@ -77,7 +77,6 @@ services:
     image: prom/prometheus:latest
     container_name: prometheus-forum-api
     restart: unless-stopped
-    user: vagrant
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/prometheus_data:/prometheus
