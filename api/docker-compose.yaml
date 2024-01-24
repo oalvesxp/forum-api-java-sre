@@ -93,3 +93,15 @@ services:
       - api
     depends_on:
       - proxy-forum-api
+
+  client-forum-api:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    image: client-forum-api
+    container_name: client-forum-api
+    restart: unless-stopped
+    networks:
+      - proxy
+    depends_on:
+      - proxy-forum-api
